@@ -17,7 +17,12 @@ public class ControlCircle extends JFrame{
 		this.add(panel, BorderLayout.SOUTH);
 		
 		jbtEnlarge.addActionListener(new EnlargeListener());
-		jbtShrink.addActionListener(new ShrinkListener());
+		jbtShrink.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				canvas.shrink();
+				
+			}
+		});
 	}
 
 	public static void main(String[] args) {
@@ -62,7 +67,7 @@ public class ControlCircle extends JFrame{
 		}
 	}
 	
-	// ????
+	/** convert this to anonymous listener class
 	class ShrinkListener implements ActionListener {
 
 		@Override
@@ -71,5 +76,5 @@ public class ControlCircle extends JFrame{
 			
 		}
 		
-	}
+	}*/
 }
