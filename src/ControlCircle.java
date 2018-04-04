@@ -17,6 +17,7 @@ public class ControlCircle extends JFrame{
 		this.add(panel, BorderLayout.SOUTH);
 		
 		jbtEnlarge.addActionListener(new EnlargeListener());
+		jbtShrink.addActionListener(new ShrinkListener());
 	}
 
 	public static void main(String[] args) {
@@ -42,6 +43,16 @@ public class ControlCircle extends JFrame{
 			radius+=2;
 			repaint();
 		}
+		
+		public void shrink() {
+			if (radius<=2) {
+				radius=0;
+			}
+			else {
+				radius-=2;
+			}
+			repaint();
+		}
 	}
 	
 	//inner class
@@ -49,5 +60,16 @@ public class ControlCircle extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			canvas.enlarge();
 		}
+	}
+	
+	// ????
+	class ShrinkListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			canvas.shrink();
+			
+		}
+		
 	}
 }
